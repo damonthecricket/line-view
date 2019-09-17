@@ -8,13 +8,21 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+// MARK: - ViewController
 
+class ViewController: UIViewController {
+    
+    @IBOutlet weak var lineView: LineView?
+
+    // MARK: - Object LifeCycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        lineView?.startPoint = CGPoint(x: lineView!.bounds.maxX/2.0, y: lineView!.bounds.maxY/2.0)
+        lineView?.endPoint = CGPoint(x: lineView!.bounds.maxX, y: lineView!.bounds.maxY/2.0)
+        lineView?.color = UIColor.black
+        lineView?.thickness = 5.0
     }
-
-
 }
 

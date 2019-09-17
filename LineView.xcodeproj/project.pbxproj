@@ -12,6 +12,8 @@
 		4EEEE8512330C6AA00B8A91B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EEEE84F2330C6AA00B8A91B /* Main.storyboard */; };
 		4EEEE8532330C6AC00B8A91B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EEEE8522330C6AC00B8A91B /* Assets.xcassets */; };
 		4EEEE8562330C6AC00B8A91B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EEEE8542330C6AC00B8A91B /* LaunchScreen.storyboard */; };
+		4EEEE85E2330C72300B8A91B /* LineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEEE85D2330C72300B8A91B /* LineView.swift */; };
+		4EEEE8602330C74500B8A91B /* LineLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EEEE85F2330C74500B8A91B /* LineLayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		4EEEE8522330C6AC00B8A91B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EEEE8552330C6AC00B8A91B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4EEEE8572330C6AC00B8A91B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4EEEE85D2330C72300B8A91B /* LineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineView.swift; sourceTree = "<group>"; };
+		4EEEE85F2330C74500B8A91B /* LineLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineLayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +60,11 @@
 			children = (
 				4EEEE84B2330C6AA00B8A91B /* AppDelegate.swift */,
 				4EEEE84D2330C6AA00B8A91B /* ViewController.swift */,
+				4EEEE85D2330C72300B8A91B /* LineView.swift */,
+				4EEEE85F2330C74500B8A91B /* LineLayer.swift */,
+				4EEEE8542330C6AC00B8A91B /* LaunchScreen.storyboard */,
 				4EEEE84F2330C6AA00B8A91B /* Main.storyboard */,
 				4EEEE8522330C6AC00B8A91B /* Assets.xcassets */,
-				4EEEE8542330C6AC00B8A91B /* LaunchScreen.storyboard */,
 				4EEEE8572330C6AC00B8A91B /* Info.plist */,
 			);
 			path = LineView;
@@ -137,6 +143,8 @@
 			files = (
 				4EEEE84E2330C6AA00B8A91B /* ViewController.swift in Sources */,
 				4EEEE84C2330C6AA00B8A91B /* AppDelegate.swift in Sources */,
+				4EEEE85E2330C72300B8A91B /* LineView.swift in Sources */,
+				4EEEE8602330C74500B8A91B /* LineLayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
