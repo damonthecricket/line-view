@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="noe-an-azM">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="vhM-f4-9xT">
+            <objects>
+                <navigationController id="noe-an-azM" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wTf-Rj-4P7">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Pmw-Cm-Vg1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Rq-eW-wcC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-755" y="23"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -26,20 +42,94 @@
                                     <constraint firstAttribute="height" constant="240" id="lPh-cR-CXo"/>
                                 </constraints>
                             </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hJG-b8-33J">
+                                <rect key="frame" x="16" y="88" width="382" height="29"/>
+                                <segments>
+                                    <segment title="Start point"/>
+                                    <segment title="End point"/>
+                                    <segment title="Color"/>
+                                    <segment title="Thickness"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentedControlValueChangedWithSender:" destination="BYZ-38-t0r" eventType="valueChanged" id="nTv-u2-DdL"/>
+                                </connections>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="x" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EZy-6G-jXZ">
+                                <rect key="frame" x="16" y="124" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="8Rv-di-iLh"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="y" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cPr-eU-tYg">
+                                <rect key="frame" x="16" y="162" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="n5n-d4-qx6"/>
+                                </connections>
+                            </textField>
+                            <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wPi-e9-ZSl">
+                                <rect key="frame" x="16" y="124" width="382" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="RNw-Vr-EFA"/>
+                                </constraints>
+                            </pickerView>
+                            <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="thickness" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nfp-QE-ggd">
+                                <rect key="frame" x="16" y="124" width="382" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="qXa-iO-xb5"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="EZy-6G-jXZ" firstAttribute="top" secondItem="hJG-b8-33J" secondAttribute="bottom" constant="8" id="5Ss-3o-qIm"/>
+                            <constraint firstItem="cPr-eU-tYg" firstAttribute="trailing" secondItem="EZy-6G-jXZ" secondAttribute="trailing" id="75J-4F-QuL"/>
+                            <constraint firstItem="nfp-QE-ggd" firstAttribute="leading" secondItem="hJG-b8-33J" secondAttribute="leading" id="AwD-K8-6lj"/>
+                            <constraint firstItem="wPi-e9-ZSl" firstAttribute="trailing" secondItem="hJG-b8-33J" secondAttribute="trailing" id="CVw-vb-knL"/>
+                            <constraint firstItem="nfp-QE-ggd" firstAttribute="trailing" secondItem="hJG-b8-33J" secondAttribute="trailing" id="Mo2-IQ-ezZ"/>
+                            <constraint firstItem="cPr-eU-tYg" firstAttribute="leading" secondItem="EZy-6G-jXZ" secondAttribute="leading" id="P1U-ey-oa0"/>
+                            <constraint firstItem="wPi-e9-ZSl" firstAttribute="leading" secondItem="hJG-b8-33J" secondAttribute="leading" id="QN2-YH-5zm"/>
+                            <constraint firstItem="cPr-eU-tYg" firstAttribute="top" secondItem="EZy-6G-jXZ" secondAttribute="bottom" constant="8" id="Rga-ed-BWu"/>
+                            <constraint firstItem="EZy-6G-jXZ" firstAttribute="leading" secondItem="hJG-b8-33J" secondAttribute="leading" id="XrW-eB-sH8"/>
+                            <constraint firstItem="wPi-e9-ZSl" firstAttribute="top" secondItem="hJG-b8-33J" secondAttribute="bottom" constant="8" id="b8q-qu-tNb"/>
+                            <constraint firstItem="hJG-b8-33J" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dQX-t5-QIl"/>
+                            <constraint firstItem="EZy-6G-jXZ" firstAttribute="trailing" secondItem="hJG-b8-33J" secondAttribute="trailing" id="eYy-MD-hPx"/>
                             <constraint firstItem="ft0-iq-6js" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ecd-Vc-8kx"/>
                             <constraint firstItem="ft0-iq-6js" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="nMU-0g-UXE"/>
+                            <constraint firstItem="nfp-QE-ggd" firstAttribute="top" secondItem="hJG-b8-33J" secondAttribute="bottom" constant="8" id="oIj-By-ZSc"/>
+                            <constraint firstItem="hJG-b8-33J" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="qJS-Rl-me9"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hJG-b8-33J" secondAttribute="trailing" constant="16" id="sL2-0P-kdb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="oFE-68-JnZ">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" title="Change" id="ryB-l3-Al2">
+                            <connections>
+                                <action selector="changeBarButtonTapWithSender:" destination="BYZ-38-t0r" id="NG8-4N-Qgw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
+                        <outlet property="changeBarButtonItem" destination="ryB-l3-Al2" id="f1s-W6-yhf"/>
+                        <outlet property="colorPickerView" destination="wPi-e9-ZSl" id="fxk-bl-d3w"/>
                         <outlet property="lineView" destination="ft0-iq-6js" id="Y5Q-gb-v7F"/>
+                        <outlet property="segmentedCotrnol" destination="hJG-b8-33J" id="56M-ek-EZ0"/>
+                        <outlet property="thicknessTextField" destination="nfp-QE-ggd" id="XOD-Rf-jDA"/>
+                        <outlet property="xTextField" destination="EZy-6G-jXZ" id="buh-4C-roP"/>
+                        <outlet property="yTextField" destination="cPr-eU-tYg" id="umU-h2-JIX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="47.826086956521742" y="23.4375"/>
         </scene>
     </scenes>
 </document>
