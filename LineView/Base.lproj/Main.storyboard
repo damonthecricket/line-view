@@ -77,6 +77,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="RNw-Vr-EFA"/>
                                 </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="Q4z-lb-t3b"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="leQ-6N-oVs"/>
+                                </connections>
                             </pickerView>
                             <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="thickness" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nfp-QE-ggd">
                                 <rect key="frame" x="16" y="124" width="382" height="30"/>
@@ -109,6 +113,9 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hJG-b8-33J" secondAttribute="trailing" constant="16" id="sL2-0P-kdb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="rwz-e6-bqa" appends="YES" id="ZSG-SB-V00"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="oFE-68-JnZ">
                         <barButtonItem key="rightBarButtonItem" enabled="NO" title="Change" id="ryB-l3-Al2">
@@ -128,6 +135,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rwz-e6-bqa">
+                    <connections>
+                        <action selector="tapGestureRecognizerWithSender:" destination="BYZ-38-t0r" id="kKp-Hd-ajY"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="47.826086956521742" y="23.4375"/>
         </scene>
